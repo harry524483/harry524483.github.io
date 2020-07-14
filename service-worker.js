@@ -31,7 +31,9 @@ if (typeof importScripts === 'function') {
 
     // Adding networkFirst for all json data. In offline mode will be fetched from cache
     workbox.routing.registerRoute(
-      new RegExp('*/geo-data'),
+      new RegExp(
+        'https://dlag3y92c3.execute-api.us-east-1.amazonaws.com/prod/geo-data'
+      ),
       new workbox.strategies.CacheFirst(),
       'GET'
     );
